@@ -1,0 +1,29 @@
+.card {
+    width: 176px;
+    font-size: 12px;
+    margin: 0 9px;
+}
+
+.card > p {
+    margin: 8px 0;
+}
+
+.card--image {
+    height: 235px;
+    width: 176px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.card--stats {
+    display: flex;
+}
+
+.card--stats > span {
+    margin-left: 5px;
+}
+
+.card--star {
+    width: 14px;
+    height: 14px;
+}
