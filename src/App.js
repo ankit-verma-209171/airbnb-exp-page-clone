@@ -2,44 +2,29 @@ import "./App.css";
 import Card from "./components/Card";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-
-import cardImage1 from "./images/card-img-1.png";
-import cardImage2 from "./images/card-img-2.png";
-import cardImage3 from "./images/card-img-3.png";
+import data from "./data";
 
 function App() {
+    const cards = data.map((item) => {
+        return (
+            <Card
+                key={item.id}
+                img={`./images/${item.coverImg}`}
+                rating={item.stats.rating}
+                reviewCount={item.stats.reviewCount}
+                country={item.location}
+                title={item.title}
+                price={item.price}
+                openSpots={item.openSpots}
+            />
+        );
+    });
+
     return (
         <div className="app">
             <Navbar />
             <Hero />
-            <div className="card-container">
-                <Card
-                    img={cardImage1}
-                    rating={5.0}
-                    reviewCount={6}
-                    country={"USA"}
-                    title={"Life Lessons with Katie Zaferes"}
-                    price={136}
-                />
-
-                <Card
-                    img={cardImage2}
-                    rating={5.0}
-                    reviewCount={30}
-                    country={"USA"}
-                    title={"Learn wedding photography"}
-                    price={125}
-                />
-
-                <Card
-                    img={cardImage3}
-                    rating={4.8}
-                    reviewCount={2}
-                    country={"USA"}
-                    title={"Group Mountain Biking"}
-                    price={50}
-                />
-            </div>
+            <div className="card-container">{cards}</div>
         </div>
     );
 }

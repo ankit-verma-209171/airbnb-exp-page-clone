@@ -2,6 +2,7 @@
     width: 176px;
     font-size: 12px;
     margin: 0 9px;
+    position: relative;
 }
 
 .card > p {
@@ -26,4 +27,14 @@
 .card--star {
     width: 14px;
     height: 14px;
+}
+
+.card--badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: white;
+    padding: 5px 7px;
+    border-radius: 2px;
+    font-weight: bold;
 }
